@@ -171,4 +171,38 @@ public class StringUtils {
         }
         return new String(chars);
     }
+    
+    /**
+     * 左右空格都去掉
+     */
+    public static String trim(String str) {
+        if (str == null || str.equals("")) {
+            return str;
+        } else {
+            //return leftTrim(rightTrim(str));
+            return str.replaceAll("^[　 ]+|[　 ]+$", "");
+        }
+    }
+
+    /**
+     * 去左空格
+     */
+    public static String leftTrim(String str) {
+        if (str == null || str.equals("")) {
+            return str;
+        } else {
+            return str.replaceAll("^[　 ]+", "");
+        }
+    }
+
+    /**
+     * 去右空格
+     */
+    public static String rightTrim(String str) {
+        if (str == null || str.equals("")) {
+            return str;
+        } else {
+            return str.replaceAll("[　 ]+$", "");
+        }
+    }
 }
